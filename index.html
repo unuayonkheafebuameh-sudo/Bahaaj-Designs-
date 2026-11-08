@@ -1,0 +1,2096 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a0b0c">
+<title>Bahaaj Designs — Creative Visual Studio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg:#090a0c;
+  --surface:#111318;
+  --surface2:#171a20;
+  --white:#f6f5f0;
+  --muted:#999ba3;
+  --accent:#c8ff67;
+  --border:rgba(255,255,255,.11);
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {scroll-behavior:smooth}
+
+body {
+  background:var(--bg);
+  color:var(--white);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+a {text-decoration:none;color:inherit}
+button {font:inherit}
+img {display:block;width:100%}
+
+.container {
+  width:min(1240px,90%);
+  margin:auto;
+}
+
+.section {
+  padding:120px 0;
+}
+
+.kicker {
+  color:var(--accent);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+.heading {
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(38px,5vw,65px);
+  letter-spacing:-3px;
+  line-height:1.08;
+}
+
+.description {
+  color:var(--muted);
+  font-size:14px;
+  line-height:2;
+}
+
+.accent {color:var(--accent)}
+
+.button {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  padding:17px 24px;
+  font-size:12px;
+  font-weight:800;
+  border:1px solid transparent;
+  transition:.3s;
+}
+
+.button-primary {
+  background:var(--accent);
+  color:#10120b;
+}
+
+.button-primary:hover {
+  background:#e1ffa9;
+  transform:translateY(-4px);
+}
+
+.button-outline {
+  border-color:var(--border);
+}
+
+.button-outline:hover {
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+/* HEADER */
+
+header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(9,10,12,.94);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+
+nav {
+  height:86px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  font-family:'Space Grotesk';
+  font-size:25px;
+  font-weight:700;
+  letter-spacing:-1.5px;
+}
+
+.logo span {color:var(--accent)}
+
+.nav-links {
+  display:flex;
+  align-items:center;
+  gap:32px;
+}
+
+.nav-links a {
+  font-size:12px;
+  color:#c4c4c7;
+  transition:.3s;
+}
+
+.nav-links a:hover {color:var(--accent)}
+
+.nav-contact {
+  background:var(--accent);
+  color:#10120b;
+  padding:14px 20px;
+  font-size:11px;
+  font-weight:800;
+}
+
+.menu {
+  display:none;
+  background:none;
+  color:white;
+  border:0;
+  font-size:27px;
+  cursor:pointer;
+}
+
+/* HERO */
+
+.hero {
+  padding:100px 0 90px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:65px;
+  align-items:center;
+}
+
+.hero-label {
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  border:1px solid var(--border);
+  padding:10px 15px;
+  font-size:10px;
+  color:#d0d0d0;
+  letter-spacing:1.5px;
+}
+
+.hero-label i {
+  width:7px;
+  height:7px;
+  background:var(--accent);
+  border-radius:50%;
+}
+
+.hero h1 {
+  font-family:'Space Grotesk';
+  font-size:clamp(55px,7vw,94px);
+  letter-spacing:-6px;
+  line-height:.99;
+  margin:35px 0 25px;
+}
+
+.hero h1 span {
+  color:var(--accent);
+  display:block;
+}
+
+.hero-text {
+  max-width:480px;
+  color:var(--muted);
+  line-height:2;
+  font-size:14px;
+}
+
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:35px;
+}
+
+.hero-bottom {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-top:65px;
+  padding-top:25px;
+  border-top:1px solid var(--border);
+}
+
+.hero-bottom strong {
+  font-family:'Space Grotesk';
+  font-size:12px;
+}
+
+.hero-bottom span {
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.7;
+}
+
+/* HERO ARTWORK */
+
+.hero-art {
+  height:600px;
+  position:relative;
+  background:#20251b;
+  overflow:hidden;
+}
+
+.hero-art img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:.85;
+}
+
+.hero-art-overlay {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.8));
+}
+
+.art-text {
+  position:absolute;
+  left:30px;
+  bottom:35px;
+  z-index:2;
+}
+
+.art-text small {
+  color:var(--accent);
+  letter-spacing:3px;
+  font-size:10px;
+}
+
+.art-text h2 {
+  font-family:'Space Grotesk';
+  font-size:55px;
+  letter-spacing:-3px;
+  margin-top:10px;
+}
+
+.art-stamp {
+  position:absolute;
+  right:25px;
+  top:25px;
+  width:100px;
+  height:100px;
+  background:var(--accent);
+  color:#111;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.5;
+  transform:rotate(12deg);
+}
+
+/* MARQUEE */
+
+.marquee {
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:25px 0;
+  overflow:hidden;
+}
+
+.marquee-track {
+  display:flex;
+  width:max-content;
+  animation:marquee 35s linear infinite;
+}
+
+.marquee-track span {
+  font-family:'Space Grotesk';
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:2px;
+  margin:0 30px;
+}
+
+.marquee-track b {
+  color:var(--accent);
+}
+
+@keyframes marquee {
+  to {transform:translateX(-50%)}
+}
+
+/* INTRO */
+
+.intro {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:100px;
+  align-items:start;
+}
+
+.intro-right {
+  padding-top:45px;
+}
+
+.intro-right p {
+  color:var(--muted);
+  line-height:2.1;
+  font-size:15px;
+  margin-bottom:25px;
+}
+
+.intro-note {
+  border-left:2px solid var(--accent);
+  padding:18px 25px;
+  margin-top:35px;
+  color:#ddd;
+  font-family:'Space Grotesk';
+  font-size:18px;
+  line-height:1.6;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  background:#101216;
+}
+
+.section-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
+  margin-bottom:50px;
+}
+
+.section-header .description {
+  max-width:360px;
+}
+
+.filters {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:35px;
+}
+
+.filter {
+  border:1px solid var(--border);
+  background:transparent;
+  color:#aaa;
+  padding:11px 19px;
+  font-size:11px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.filter.active,
+.filter:hover {
+  background:var(--accent);
+  color:#111;
+  border-color:var(--accent);
+}
+
+.portfolio-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:35px 20px;
+}
+
+.project {
+  min-width:0;
+  transition:.4s;
+}
+
+.project.hidden {display:none}
+
+.project-image {
+  height:350px;
+  overflow:hidden;
+  position:relative;
+  background:#202020;
+}
+
+.project-image img {
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s;
+}
+
+.project:hover img {
+  transform:scale(1.07);
+}
+
+.project-tag {
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#0b0c0d;
+  color:var(--accent);
+  padding:9px 12px;
+  font-size:9px;
+  letter-spacing:1px;
+}
+
+.project-info {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.project-info h3 {
+  font-family:'Space Grotesk';
+  font-size:17px;
+  margin-bottom:7px;
+}
+
+.project-info p {
+  color:var(--muted);
+  font-size:11px;
+}
+
+.project-arrow {
+  font-size:24px;
+  color:var(--accent);
+}
+
+/* FEATURED PROJECT */
+
+.featured {
+  padding:120px 0;
+}
+
+.featured-card {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#15191b;
+  min-height:500px;
+}
+
+.featured-image {
+  min-height:500px;
+  overflow:hidden;
+}
+
+.featured-image img {
+  height:100%;
+  object-fit:cover;
+}
+
+.featured-content {
+  padding:65px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.featured-content h2 {
+  font-family:'Space Grotesk';
+  font-size:clamp(35px,4vw,55px);
+  letter-spacing:-2px;
+  margin-bottom:25px;
+}
+
+.featured-content p {
+  font-size:13px;
+  color:var(--muted);
+  line-height:2;
+  margin-bottom:25px;
+}
+
+.featured-details {
+  border-top:1px solid var(--border);
+  padding-top:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.featured-details span {
+  color:var(--muted);
+  font-size:10px;
+  display:block;
+  margin-bottom:8px;
+}
+
+.featured-details strong {
+  font-size:12px;
+}
+
+/* SERVICES */
+
+.services {
+  background:#101216;
+}
+
+.services-intro {
+  max-width:650px;
+  margin-bottom:65px;
+}
+
+.services-intro p {
+  max-width:490px;
+  margin-top:20px;
+}
+
+.services-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border-top:1px solid var(--border);
+  border-left:1px solid var(--border);
+}
+
+.service {
+  min-height:270px;
+  padding:40px;
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  transition:.3s;
+}
+
+.service:hover {
+  background:#191e17;
+}
+
+.service-top {
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:45px;
+}
+
+.service-number {
+  color:var(--accent);
+  font-size:12px;
+}
+
+.service-icon {
+  color:var(--accent);
+  font-size:25px;
+}
+
+.service h3 {
+  font-family:'Space Grotesk';
+  font-size:25px;
+  margin-bottom:15px;
+}
+
+.service p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+  max-width:440px;
+}
+
+/* PROCESS */
+
+.process-grid {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:55px;
+}
+
+.process-card {
+  border:1px solid var(--border);
+  padding:30px 25px;
+  min-height:245px;
+}
+
+.process-card .number {
+  color:var(--accent);
+  font-family:'Space Grotesk';
+  font-size:35px;
+  margin-bottom:45px;
+}
+
+.process-card h3 {
+  font-size:17px;
+  margin-bottom:13px;
+}
+
+.process-card p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.9;
+}
+
+/* ABOUT */
+
+.about {
+  background:#111318;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:90px;
+  align-items:center;
+}
+
+.about-image {
+  height:600px;
+  position:relative;
+}
+
+.about-image img {
+  height:100%;
+  object-fit:cover;
+}
+
+.about-image-label {
+  position:absolute;
+  left:20px;
+  bottom:20px;
+  background:var(--accent);
+  color:#111;
+  padding:15px 20px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.about-content p {
+  color:var(--muted);
+  line-height:2;
+  font-size:14px;
+  margin:25px 0;
+}
+
+.about-values {
+  margin-top:40px;
+  border-top:1px solid var(--border);
+}
+
+.value {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.value strong {
+  font-family:'Space Grotesk';
+  font-size:16px;
+}
+
+.value span {
+  color:var(--accent);
+  font-size:12px;
+}
+
+/* WHY US */
+
+.why-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:35px;
+  margin-top:55px;
+}
+
+.why-card {
+  padding-top:25px;
+  border-top:1px solid var(--border);
+}
+
+.why-card span {
+  color:var(--accent);
+  font-size:24px;
+}
+
+.why-card h3 {
+  font-family:'Space Grotesk';
+  font-size:20px;
+  margin:25px 0 15px;
+}
+
+.why-card p {
+  color:var(--muted);
+  font-size:13px;
+  line-height:2;
+}
+
+/* TESTIMONIAL PLACEHOLDER */
+
+.testimonials {
+  background:#111318;
+}
+
+.testimonial-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+  margin-top:50px;
+}
+
+.testimonial {
+  border:1px solid var(--border);
+  padding:35px;
+}
+
+.testimonial .quote {
+  color:var(--accent);
+  font-family:'Space Grotesk';
+  font-size:50px;
+}
+
+.testimonial p {
+  color:#d0d0d0;
+  font-size:15px;
+  line-height:2;
+  margin:15px 0 25px;
+}
+
+.testimonial small {
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* FAQ */
+
+.faq-layout {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:80px;
+}
+
+.faq-intro p {
+  margin-top:20px;
+}
+
+.faq-item {
+  border-bottom:1px solid var(--border);
+}
+
+.faq-question {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:25px 0;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+  background:none;
+  border:0;
+  color:white;
+  width:100%;
+  text-align:left;
+}
+
+.faq-question span {
+  color:var(--accent);
+  font-size:22px;
+}
+
+.faq-answer {
+  display:none;
+  color:var(--muted);
+  font-size:13px;
+  line-height:2;
+  padding:0 35px 25px 0;
+}
+
+.faq-item.open .faq-answer {display:block}
+
+/* CTA */
+
+.cta {
+  background:var(--accent);
+  color:#111;
+  text-align:center;
+  padding:110px 30px;
+}
+
+.cta .kicker {color:#263217}
+
+.cta h2 {
+  font-family:'Space Grotesk';
+  font-size:clamp(42px,7vw,80px);
+  letter-spacing:-5px;
+  line-height:1;
+  max-width:850px;
+  margin:0 auto 30px;
+}
+
+.cta p {
+  max-width:470px;
+  margin:0 auto 35px;
+  color:#364128;
+  line-height:1.9;
+  font-size:14px;
+}
+
+.cta .button {
+  background:#111;
+  color:white;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:90px;
+}
+
+.contact-info p {
+  color:var(--muted);
+  line-height:2;
+  font-size:13px;
+  margin:20px 0 35px;
+}
+
+.contact-detail {
+  border-top:1px solid var(--border);
+  padding:20px 0;
+}
+
+.contact-detail span {
+  color:var(--muted);
+  font-size:10px;
+  letter-spacing:1px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.contact-detail strong {
+  font-size:14px;
+}
+
+.contact-form {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:22px;
+}
+
+.form-group {
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.form-group.full {grid-column:1/-1}
+
+.form-group label {
+  font-size:11px;
+  color:#ccc;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background:#12151a;
+  border:1px solid var(--border);
+  color:white;
+  padding:17px;
+  font:inherit;
+  font-size:13px;
+  outline:none;
+  width:100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color:var(--accent);
+}
+
+.form-group textarea {
+  min-height:140px;
+  resize:vertical;
+}
+
+.form-group select option {background:#111}
+
+.contact-form button {
+  cursor:pointer;
+  width:max-content;
+}
+
+/* FOOTER */
+
+footer {
+  background:#070809;
+  padding:85px 0 25px;
+  border-top:1px solid var(--border);
+}
+
+.footer-main {
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:70px;
+}
+
+.footer-about p {
+  color:var(--muted);
+  font-size:12px;
+  line-height:2;
+  max-width:270px;
+  margin-top:20px;
+}
+
+.footer-column h4 {
+  font-size:12px;
+  margin-bottom:25px;
+}
+
+.footer-column a {
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-bottom:17px;
+  transition:.3s;
+}
+
+.footer-column a:hover {color:var(--accent)}
+
+.footer-bottom {
+  border-top:1px solid var(--border);
+  padding-top:25px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#777;
+  font-size:10px;
+}
+
+/* ANIMATION */
+
+.reveal {
+  opacity:0;
+  transform:translateY(30px);
+  transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px) {
+  .hero {gap:30px}
+  .hero-art {height:480px}
+  .about-grid {gap:40px}
+  .process-grid {grid-template-columns:repeat(2,1fr)}
+  .footer-main {grid-template-columns:repeat(2,1fr)}
+  .featured-content {padding:35px}
+}
+
+@media(max-width:750px) {
+  .section {padding:85px 0}
+
+  .nav-links {
+    display:none;
+    position:absolute;
+    top:86px;
+    left:0;
+    width:100%;
+    padding:30px 5%;
+    background:#101216;
+    border-bottom:1px solid var(--border);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:25px;
+  }
+
+  .nav-links.active {display:flex}
+  .menu {display:block}
+  .nav-contact {display:none}
+
+  .hero {
+    grid-template-columns:1fr;
+    padding-top:75px;
+  }
+
+  .hero h1 {letter-spacing:-4px}
+  .hero-art {height:480px;margin-top:25px}
+
+  .intro,.about-grid,.faq-layout,.contact-grid {
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .intro-right {padding-top:0}
+
+  .section-header {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .portfolio-grid {grid-template-columns:repeat(2,1fr)}
+  .project-image {height:280px}
+
+  .featured-card {grid-template-columns:1fr}
+  .featured-image {min-height:350px;height:350px}
+
+  .services-grid {grid-template-columns:1fr}
+  .about-image {height:420px}
+
+  .testimonial-grid {grid-template-columns:1fr}
+  .why-grid {grid-template-columns:1fr}
+
+  .contact-grid {gap:55px}
+}
+
+@media(max-width:500px) {
+  .container {width:90%}
+  .hero h1 {font-size:58px}
+  .hero-art {height:390px}
+  .art-text h2 {font-size:42px}
+  .portfolio-grid {grid-template-columns:1fr}
+  .project-image {height:390px}
+  .process-grid {grid-template-columns:1fr}
+  .process-card {min-height:200px}
+  .featured-content {padding:30px 23px}
+  .about-image {height:350px}
+  .contact-form {grid-template-columns:1fr}
+  .form-group.full {grid-column:auto}
+  .footer-main {grid-template-columns:1fr 1fr;gap:35px 20px}
+  .footer-bottom {flex-direction:column}
+  .cta {padding:85px 20px}
+  .cta h2 {letter-spacing:-3px}
+  .hero-bottom {align-items:flex-start}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+  <a href="#home" class="logo">BAHAAJ<span>.</span></a>
+
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Portfolio</a>
+    <a href="#services">Services</a>
+    <a href="#process">Our Process</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <a href="#contact" class="nav-contact">START A PROJECT ↗</a>
+
+  <button class="menu" id="menu" aria-label="Open menu">☰</button>
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<div class="container">
+<section class="hero" id="home">
+
+  <div class="hero-content reveal">
+    <div class="hero-label">
+      <i></i> INDEPENDENT CREATIVE STUDIO
+    </div>
+
+    <h1>
+      We make<br>
+      ideas look<br>
+      <span>extraordinary.</span>
+    </h1>
+
+    <p class="hero-text">
+      Welcome to Bahaaj Designs, where imagination meets visual
+      communication. We create distinctive graphics, compelling
+      brand identities and creative experiences that help ideas
+      stand out in a crowded world.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#work" class="button button-primary">
+        EXPLORE OUR WORK ↗
+      </a>
+      <a href="#about" class="button button-outline">
+        DISCOVER OUR STUDIO
+      </a>
+    </div>
+
+    <div class="hero-bottom">
+      <strong>CREATIVITY WITH PURPOSE.</strong>
+      <span>Thoughtful design.<br>Distinctive visual expression.</span>
+    </div>
+  </div>
+
+  <div class="hero-art reveal">
+    <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1200"
+         alt="Creative graphic artwork">
+
+    <div class="hero-art-overlay"></div>
+
+    <div class="art-stamp">
+      THINK<br>CREATE<br>INSPIRE
+    </div>
+
+    <div class="art-text">
+      <small>BAHAAJ DESIGNS / VISUAL STUDIO</small>
+      <h2>Make it<br>memorable.</h2>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- MOVING TEXT -->
+
+<div class="marquee">
+<div class="marquee-track">
+  <span>GRAPHIC DESIGN</span><b>✳</b>
+  <span>BRAND IDENTITY</span><b>✳</b>
+  <span>VISUAL STORYTELLING</span><b>✳</b>
+  <span>CREATIVE THINKING</span><b>✳</b>
+  <span>DIGITAL ART</span><b>✳</b>
+  <span>GRAPHIC DESIGN</span><b>✳</b>
+  <span>BRAND IDENTITY</span><b>✳</b>
+  <span>VISUAL STORYTELLING</span><b>✳</b>
+  <span>CREATIVE THINKING</span><b>✳</b>
+  <span>DIGITAL ART</span><b>✳</b>
+</div>
+</div>
+
+<!-- INTRODUCTION -->
+
+<div class="container">
+<section class="section intro">
+
+  <div class="reveal">
+    <div class="kicker">01 / The creative vision</div>
+    <h2 class="heading">
+      Good design<br>
+      catches the eye.<br>
+      <span class="accent">Great design</span><br>
+      makes a statement.
+    </h2>
+  </div>
+
+  <div class="intro-right reveal">
+    <p>
+      Every brand has a story. Every idea deserves to be seen.
+      But communicating that story effectively requires more
+      than simply putting colours and images together.
+    </p>
+
+    <p>
+      At Bahaaj Designs, we approach graphic design as a form
+      of visual communication. We combine creativity, composition,
+      typography and thoughtful execution to transform concepts
+      into designs that communicate clearly.
+    </p>
+
+    <div class="intro-note">
+      "Our goal is not just to create something beautiful.
+      It is to create something meaningful."
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- PORTFOLIO -->
+
+<section class="section portfolio" id="work">
+<div class="container">
+
+  <div class="section-header reveal">
+    <div>
+      <div class="kicker">02 / Selected creations</div>
+      <h2 class="heading">A closer look at<br>what we create.</h2>
+    </div>
+
+    <p class="description">
+      Explore a selection of creative visual work, design
+      concepts and artistic compositions. Every project
+      represents an opportunity to communicate differently.
+    </p>
+  </div>
+
+  <div class="filters reveal">
+    <button class="filter active" data-filter="all">All Projects</button>
+    <button class="filter" data-filter="branding">Branding</button>
+    <button class="filter" data-filter="poster">Posters & Flyers</button>
+    <button class="filter" data-filter="social">Social Media</button>
+    <button class="filter" data-filter="art">Digital Art</button>
+  </div>
+
+  <div class="portfolio-grid">
+
+    <article class="project reveal" data-category="branding">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1634942536790-253d6c7c5c52?w=800" alt="Brand identity concept">
+        <span class="project-tag">BRANDING</span>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Brand Identity</h3>
+          <p>Visual identity & brand direction</p>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </article>
+
+    <article class="project reveal" data-category="poster">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800" alt="Creative poster artwork">
+        <span class="project-tag">POSTER DESIGN</span>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Creative Campaign</h3>
+          <p>Poster & promotional design</p>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </article>
+
+    <article class="project reveal" data-category="social">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800" alt="Graphic design presentation">
+        <span class="project-tag">SOCIAL MEDIA</span>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Digital Campaign</h3>
+          <p>Social media visual design</p>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </article>
+
+    <article class="project reveal" data-category="art">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800" alt="Abstract digital artwork">
+        <span class="project-tag">DIGITAL ART</span>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Abstract Expression</h3>
+          <p>Digital composition & artwork</p>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </article>
+
+    <article class="project reveal" data-category="branding">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?w=800" alt="Product branding concept">
+        <span class="project-tag">BRANDING</span>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Product Presentation</h3>
+          <p>Creative branding concept</p>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </article>
+
+    <article class="project reveal" data-category="poster">
+      <div class="project-image">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800" alt="Creative visual photography">
+        <span class="project-tag">CREATIVE DESIGN</span>
+      </div>
+      <div class="project-info">
+        <div>
+          <h3>Visual Storytelling</h3>
+          <p>Creative visual composition</p>
+        </div>
+        <span class="project-arrow">↗</span>
+      </div>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- FEATURED PROJECT -->
+
+<div class="container">
+<section class="featured">
+
+  <div class="kicker reveal">03 / Featured creative direction</div>
+
+  <div class="featured-card reveal">
+    <div class="featured-image">
+      <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1000"
+           alt="Featured design presentation">
+    </div>
+
+    <div class="featured-content">
+      <div class="kicker">BEHIND THE VISUALS</div>
+
+      <h2>Every detail has a purpose.</h2>
+
+      <p>
+        Strong visual communication starts with an idea and
+        develops through careful creative decisions. From
+        typography and colour selection to layout and final
+        presentation, every element contributes to the message.
+      </p>
+
+      <div class="featured-details">
+        <div>
+          <span>OUR APPROACH</span>
+          <strong>Creative thinking</strong>
+        </div>
+        <div>
+          <span>OUR FOCUS</span>
+          <strong>Visual communication</strong>
+        </div>
+        <div>
+          <span>OUR PRIORITY</span>
+          <strong>Attention to detail</strong>
+        </div>
+        <div>
+          <span>OUR PURPOSE</span>
+          <strong>Meaningful design</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- SERVICES -->
+
+<section class="section services" id="services">
+<div class="container">
+
+  <div class="services-intro reveal">
+    <div class="kicker">04 / What we offer</div>
+    <h2 class="heading">
+      Creative solutions<br>
+      for <span class="accent">every vision.</span>
+    </h2>
+
+    <p class="description">
+      Whether you're building a brand, promoting a product
+      or communicating an idea, we create visual solutions
+      designed around your objectives.
+    </p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service reveal">
+      <div class="service-top">
+        <span class="service-number">01 / SERVICE</span>
+        <span class="service-icon">✳</span>
+      </div>
+      <h3>Brand Identity & Logo Design</h3>
+      <p>
+        Build a recognizable visual identity with thoughtful
+        logo design, brand elements, colour systems and
+        consistent visual direction.
+      </p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-top">
+        <span class="service-number">02 / SERVICE</span>
+        <span class="service-icon">✳</span>
+      </div>
+      <h3>Flyer & Poster Design</h3>
+      <p>
+        Communicate promotions, events, announcements and
+        campaigns through compelling layouts, strong
+        typography and effective visual hierarchy.
+      </p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-top">
+        <span class="service-number">03 / SERVICE</span>
+        <span class="service-icon">✳</span>
+      </div>
+      <h3>Social Media Graphics</h3>
+      <p>
+        Develop creative visual content for digital platforms,
+        including promotional graphics, announcements,
+        campaign creatives and branded content.
+      </p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-top">
+        <span class="service-number">04 / SERVICE</span>
+        <span class="service-icon">✳</span>
+      </div>
+      <h3>Business & Marketing Materials</h3>
+      <p>
+        Present your business professionally through
+        business cards, brochures, banners, presentations
+        and other marketing materials.
+      </p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-top">
+        <span class="service-number">05 / SERVICE</span>
+        <span class="service-icon">✳</span>
+      </div>
+      <h3>Product & Advertising Design</h3>
+      <p>
+        Give products and services a stronger visual
+        presentation through creative advertising,
+        promotional artwork and product graphics.
+      </p>
+    </div>
+
+    <div class="service reveal">
+      <div class="service-top">
+        <span class="service-number">06 / SERVICE</span>
+        <span class="service-icon">✳</span>
+      </div>
+      <h3>Custom Creative Designs</h3>
+      <p>
+        Have a unique idea? We explore creative possibilities
+        and develop custom visual concepts to suit
+        different communication needs.
+      </p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PROCESS -->
+
+<div class="container">
+<section class="section" id="process">
+
+  <div class="section-header reveal">
+    <div>
+      <div class="kicker">05 / How we work</div>
+      <h2 class="heading">From your idea<br>to the final design.</h2>
+    </div>
+
+    <p class="description">
+      A clear creative process helps turn your expectations
+      into a finished visual solution.
+    </p>
+  </div>
+
+  <div class="process-grid">
+
+    <div class="process-card reveal">
+      <div class="number">01</div>
+      <h3>Understanding</h3>
+      <p>
+        We learn about your idea, your objectives,
+        your audience and what you want the design
+        to communicate.
+      </p>
+    </div>
+
+    <div class="process-card reveal">
+      <div class="number">02</div>
+      <h3>Concept Development</h3>
+      <p>
+        We explore creative directions, visual references,
+        composition and design concepts that align
+        with your requirements.
+      </p>
+    </div>
+
+    <div class="process-card reveal">
+      <div class="number">03</div>
+      <h3>Design & Refinement</h3>
+      <p>
+        Your chosen creative direction is developed
+        and refined with attention to detail and
+        visual consistency.
+      </p>
+    </div>
+
+    <div class="process-card reveal">
+      <div class="number">04</div>
+      <h3>Final Delivery</h3>
+      <p>
+        The completed design is prepared and delivered
+        in the agreed formats, ready for its intended use.
+      </p>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+<div class="container">
+
+  <div class="about-grid">
+
+    <div class="about-image reveal">
+      <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1000"
+           alt="Creative studio workspace">
+      <div class="about-image-label">
+        THE THINKING BEHIND THE DESIGN
+      </div>
+    </div>
+
+    <div class="about-content reveal">
+      <div class="kicker">06 / About Bahaaj Designs</div>
+
+      <h2 class="heading">
+        Creativity is<br>
+        our language.<br>
+        <span class="accent">Design is how<br>we speak.</span>
+      </h2>
+
+      <p>
+        Bahaaj Designs is a creative design brand built
+        around the power of visual communication.
+        We believe that design can do more than decorate:
+        it can communicate ideas, establish recognition
+        and create memorable impressions.
+      </p>
+
+      <p>
+        Our approach combines creativity, intentional
+        composition and a passion for visual expression.
+        We work to understand what each project needs
+        before translating that vision into design.
+      </p>
+
+      <div class="about-values">
+        <div class="value">
+          <strong>Creativity</strong>
+          <span>01 ↗</span>
+        </div>
+        <div class="value">
+          <strong>Originality</strong>
+          <span>02 ↗</span>
+        </div>
+        <div class="value">
+          <strong>Attention to detail</strong>
+          <span>03 ↗</span>
+        </div>
+        <div class="value">
+          <strong>Purposeful communication</strong>
+          <span>04 ↗</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<div class="container">
+<section class="section">
+
+  <div class="reveal">
+    <div class="kicker">07 / The difference</div>
+    <h2 class="heading">
+      Design with<br>
+      <span class="accent">intention.</span>
+    </h2>
+    <p class="description" style="max-width:500px;margin-top:20px">
+      The value of a design is not just in how it looks,
+      but in how effectively it communicates.
+    </p>
+  </div>
+
+  <div class="why-grid">
+
+    <div class="why-card reveal">
+      <span>✳</span>
+      <h3>Thoughtful Creativity</h3>
+      <p>
+        Every project begins with understanding the
+        message and exploring the right creative
+        direction to communicate it.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <span>◈</span>
+      <h3>Visual Consistency</h3>
+      <p>
+        We value visual harmony, considered typography
+        and colour choices that support a clear
+        and recognizable presentation.
+      </p>
+    </div>
+
+    <div class="why-card reveal">
+      <span>✦</span>
+      <h3>Attention to Detail</h3>
+      <p>
+        Composition, spacing, hierarchy and finishing
+        all contribute to a stronger final visual
+        communication experience.
+      </p>
+    </div>
+
+  </div>
+</section>
+</div>
+
+<!-- TESTIMONIALS -->
+
+<section class="section testimonials">
+<div class="container">
+
+  <div class="section-header reveal">
+    <div>
+      <div class="kicker">08 / Client experiences</div>
+      <h2 class="heading">Good work.<br>Meaningful connections.</h2>
+    </div>
+
+    <p class="description">
+      Every creative collaboration is an opportunity
+      to understand an idea and bring it to life.
+    </p>
+  </div>
+
+  <div class="testimonial-grid">
+
+    <div class="testimonial reveal">
+      <div class="quote">“</div>
+      <p>
+        This space is reserved for a genuine client
+        testimonial about their experience working
+        with Bahaaj Designs.
+      </p>
+      <small>CLIENT NAME / PROJECT TYPE</small>
+    </div>
+
+    <div class="testimonial reveal">
+      <div class="quote">“</div>
+      <p>
+        This space is reserved for another genuine
+        client review highlighting the quality
+        and experience of the collaboration.
+      </p>
+      <small>CLIENT NAME / PROJECT TYPE</small>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+
+<div class="container">
+<section class="section">
+
+  <div class="faq-layout">
+
+    <div class="faq-intro reveal">
+      <div class="kicker">09 / Frequently asked questions</div>
+      <h2 class="heading">A few things<br>you may want<br>to know.</h2>
+
+      <p class="description">
+        Have questions about working with Bahaaj Designs?
+        Here are some helpful answers.
+      </p>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <div class="faq-item open">
+        <button class="faq-question">
+          What kind of design services do you offer?
+          <span>−</span>
+        </button>
+        <div class="faq-answer">
+          We offer graphic design services including
+          branding, logo design, flyers, posters,
+          social media graphics, advertising materials
+          and custom creative designs.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I place an order?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          You can contact us through WhatsApp or the
+          enquiry form on this website. Tell us about
+          your project and what you would like to create.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can I request a custom design?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Yes. You can discuss your concept, preferred
+          style and requirements with us so that we
+          can understand the creative direction you need.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How long does a project take?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Project timelines depend on the type of design,
+          complexity and agreed requirements. Contact
+          us to discuss your particular project.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          How do I get a quotation?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          Send us a description of your project and
+          the type of design you need. We can then
+          discuss the requirements and pricing.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          Can businesses work with you regularly?
+          <span>+</span>
+        </button>
+        <div class="faq-answer">
+          You can enquire about ongoing design needs
+          and discuss an arrangement that suits
+          your business requirements.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- CALL TO ACTION -->
+
+<section class="cta">
+  <div class="kicker">LET'S MAKE SOMETHING DIFFERENT</div>
+
+  <h2>Your next big idea deserves great design.</h2>
+
+  <p>
+    Have a project, a business idea or something you
+    want the world to see? Let's discuss how we can
+    bring your vision to life.
+  </p>
+
+  <a href="#contact" class="button">
+    START YOUR PROJECT ↗
+  </a>
+</section>
+
+<!-- CONTACT -->
+
+<div class="container">
+<section class="section" id="contact">
+
+  <div class="contact-grid">
+
+    <div class="contact-info reveal">
+      <div class="kicker">10 / Get in touch</div>
+
+      <h2 class="heading">
+        Let's talk<br>
+        about your<br>
+        <span class="accent">next project.</span>
+      </h2>
+
+      <p>
+        Every great design starts with a conversation.
+        Tell us what you have in mind and let's explore
+        the possibilities together.
+      </p>
+
+      <div class="contact-detail">
+        <span>WHATSAPP</span>
+        <strong>Connect with Bahaaj Designs</strong>
+      </div>
+
+      <div class="contact-detail">
+        <span>INSTAGRAM</span>
+        <strong>Follow our creative journey</strong>
+      </div>
+
+      <div class="contact-detail">
+        <span>PROJECT ENQUIRIES</span>
+        <strong>Let's discuss your requirements</strong>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" id="email" placeholder="Your email">
+      </div>
+
+      <div class="form-group full">
+        <label>What service do you need?</label>
+        <select id="service" required>
+          <option value="">Select a service</option>
+          <option>Logo & Brand Identity</option>
+          <option>Flyer & Poster Design</option>
+          <option>Social Media Graphics</option>
+          <option>Marketing Materials</option>
+          <option>Product Advertising</option>
+          <option>Custom Creative Design</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group full">
+        <label>Tell us about your project</label>
+        <textarea id="message" placeholder="Describe what you have in mind..." required></textarea>
+      </div>
+
+      <div class="form-group full">
+        <button class="button button-primary" type="submit">
+          SEND PROJECT ENQUIRY ↗
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+  <div class="footer-main">
+
+    <div class="footer-about">
+      <a href="#home" class="logo">BAHAAJ<span>.</span></a>
+
+      <p>
+        A creative design brand focused on transforming
+        ideas into meaningful visual experiences.
+        Creativity with purpose. Design with intention.
+      </p>
+    </div>
+
+    <div class="footer-column">
+      <h4>EXPLORE</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#work">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#process">Our Process</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>OUR SERVICES</h4>
+      <a href="#services">Brand Identity</a>
+      <a href="#services">Flyer Design</a>
+      <a href="#services">Social Media</a>
+      <a href="#services">Marketing Materials</a>
+      <a href="#services">Custom Designs</a>
+    </div>
+
+    <div class="footer-column">
+      <h4>CONNECT</h4>
+      <a href="#" id="footerWhatsApp">WhatsApp ↗</a>
+      <a href="#" id="instagram">Instagram ↗</a>
+      <a href="#" id="facebook">Facebook ↗</a>
+      <a href="#contact">Send an Enquiry ↗</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Bahaaj Designs. All rights reserved.</span>
+    <span>CREATED WITH PURPOSE. DESIGNED TO COMMUNICATE.</span>
+  </div>
+
+</div>
+</footer>
+
+<script>
+
+/* =================================
+   BUSINESS INFORMATION
+   Replace these placeholders.
+================================= */
+
+const WHATSAPP_NUMBER = "2340000000000";
+const INSTAGRAM_URL = "#";
+const FACEBOOK_URL = "#";
+
+/* WHATSAPP LINKS */
+
+const whatsappMessage = encodeURIComponent(
+  "Hello Bahaaj Designs. I would like to make an enquiry about your design services."
+);
+
+const whatsappURL =
+  "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + whatsappMessage;
+
+document.getElementById("footerWhatsApp").href = whatsappURL;
+document.getElementById("instagram").href = INSTAGRAM_URL;
+document.getElementById("facebook").href = FACEBOOK_URL;
+
+/* MENU */
+
+const menu = document.getElementById("menu");
+const nav = document.getElementById("navLinks");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("active");
+  menu.textContent = nav.classList.contains("active") ? "✕" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+    menu.textContent = "☰";
+  });
+});
+
+/* PORTFOLIO FILTER */
+
+const filters = document.querySelectorAll(".filter");
+const projects = document.querySelectorAll(".project");
+
+filters.forEach(button => {
+  button.addEventListener("click", () => {
+
+    filters.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+
+    const selected = button.dataset.filter;
+
+    projects.forEach(project => {
+      const category = project.dataset.category;
+
+      if (selected === "all" || selected === category) {
+        project.classList.remove("hidden");
+      } else {
+        project.classList.add("hidden");
+      }
+    });
+  });
+});
+
+/* FAQ ACCORDION */
+
+document.querySelectorAll(".faq-question").forEach(question => {
+
+  question.addEventListener("click", () => {
+
+    const item = question.parentElement;
+    const wasOpen = item.classList.contains("open");
+
+    document.querySelectorAll(".faq-item").forEach(faq => {
+      faq.classList.remove("open");
+      faq.querySelector("span").textContent = "+";
+    });
+
+    if (!wasOpen) {
+      item.classList.add("open");
+      question.querySelector("span").textContent = "−";
+    }
+
+  });
+
+});
+
+/* CONTACT FORM */
+
+document.getElementById("contactForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const service = document.getElementById("service").value;
+  const message = document.getElementById("message").value.trim();
+
+  const text = encodeURIComponent(
+    "Hello Bahaaj Designs!\n\n" +
+    "I have a project enquiry.\n\n" +
+    "Name: " + name + "\n" +
+    "Email: " + (email || "Not provided") + "\n" +
+    "Service: " + service + "\n" +
+    "Project details: " + message
+  );
+
+  window.open(
+    "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text,
+    "_blank"
+  );
+
+});
+
+/* SCROLL ANIMATIONS */
+
+const observer = new IntersectionObserver(entries => {
+
+  entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+
+  });
+
+}, {threshold:0.1});
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
